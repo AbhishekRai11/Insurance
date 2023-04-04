@@ -17,7 +17,7 @@ public class InsurancePolicyController {
     @Autowired
     InsurancePolicyService insurancePolicyService;
 
-    @GetMapping("/policies")
+    @GetMapping("/allPolicies")
     public ResponseEntity<List<InsurancePolicy>> getInsurancePolicy()throws Exception{
         List<InsurancePolicy> lst= insurancePolicyService.getInsurancePolicy();
         return new ResponseEntity<>(lst,HttpStatus.OK);

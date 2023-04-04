@@ -18,7 +18,7 @@ public class ClaimController {
     @Autowired
     ClaimService claimService;
 
-    @GetMapping("/claims")
+    @GetMapping("/allClaims")
     public ResponseEntity<List<Claim>> getClaim()throws Exception{
 
         List<Claim> lst= claimService.getClaim();
@@ -26,7 +26,7 @@ public class ClaimController {
 
     }
 
-    @GetMapping("/claims")
+    @GetMapping("/claim")
     public ResponseEntity<Claim> getCaimById(@RequestParam("id") Integer id)throws Exception{
         Claim claim=claimService.getClaimById(id);
         return new ResponseEntity<>(claim,HttpStatus.OK);

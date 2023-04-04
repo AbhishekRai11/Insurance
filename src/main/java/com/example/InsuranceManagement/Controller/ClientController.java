@@ -16,7 +16,7 @@ public class ClientController {
     @Autowired
     ClientService clientService;
 
-    @GetMapping("/clients")
+    @GetMapping("/allClients")
     public ResponseEntity<List<Client>> getClient()throws Exception{
 
         List<Client> lst = clientService.getClient();
