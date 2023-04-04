@@ -13,26 +13,35 @@ public class ClientService {
     @Autowired
     ClientRepository clientRepository;
 
-    public List<Client> getClient(){
-         return clientRepository.findAll();
+    public List<Client> getClient()throws Exception{
+
+        return clientRepository.findAll();
     }
 
-    public Client getClientById(Integer id){
-         return clientRepository.findById(id).get();
+    public Client getClientById(Integer id)throws  Exception{
+         Client client= clientRepository.findById(id).get();
+         if(client==null){
+             throw new Exception("Id not found");
+         }
+         return client;
     }
 
-    public String createClient(Client client){
+    public String createClient(Client client)throws Exception{
         clientRepository.save(client);
         return "Client created successfully";
     }
 
-    public String updateClient(Integer id){
+    public String updateClient(Integer id) throws Exception{
         Client client=clientRepository.findById(id).get();
+
+        if(client==null){
+            throw new Exception("Id not found");
+        }
 
         return "Client updated successfully";
     }
 
-    public String daleteClient(Integer id){
+    public String daleteClient(Integer id)throws Exception{
         clientRepository.deleteById(id);
 
         return "client deleted successfully";

@@ -23,4 +23,56 @@ public class Client {
 
     @Column(nullable = false)
     private String contactInformatiom;
+
+    public Client() {
+    }
+
+
+    public Client(int id, String name, Date dateOfBirth, String address, String contactInformatiom) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.contactInformatiom = contactInformatiom;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContactInformatiom() {
+        return contactInformatiom;
+    }
+
+    public void setContactInformatiom(String contactInformatiom) {
+        this.contactInformatiom = contactInformatiom;
+    }
 }

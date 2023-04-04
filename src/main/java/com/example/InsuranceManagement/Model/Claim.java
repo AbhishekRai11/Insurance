@@ -28,5 +28,63 @@ public class Claim {
     @JoinColumn
     private InsurancePolicy insurancePolicy;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getClaimNumber() {
+        return claimNumber;
+    }
+
+    public void setClaimNumber(int claimNumber) {
+        this.claimNumber = claimNumber;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getClaimDate() {
+        return claimDate;
+    }
+
+    public void setClaimDate(Date claimDate) {
+        this.claimDate = claimDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public InsurancePolicy getInsurancePolicy() {
+        return insurancePolicy;
+    }
+
+    public void setInsurancePolicy(InsurancePolicy insurancePolicy) {
+        this.insurancePolicy = insurancePolicy;
+    }
+
+    public Claim(int id, int claimNumber, String description, Date claimDate, String status, InsurancePolicy insurancePolicy) {
+        this.id = id;
+        this.claimNumber = claimNumber;
+        this.description = description;
+        this.claimDate = claimDate;
+        this.status = status;
+        this.insurancePolicy = insurancePolicy;
+    }
+
+    public Claim() {
+    }
 }
